@@ -15,7 +15,8 @@ controldis <- function(d, m, mimark) {
 	      return(d)
       }
    
-     if(class(d)=="dist"){
+     #if(class(d)=="dist"){  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   CAMBIADO 04/12/2019 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+     if(inherits (d, what="dist")){ 
          d<- as.matrix(d)
      }
       

@@ -138,12 +138,12 @@ data(SFphylotree)
      # IFDAR
  ifdar.sp_44.ipp.env<- envelope4idar(mippp=SF, mippp.sp.sim= sp_44.ipp.sim.m,
                 mimark="sp_44",  namesmark="species", r=1:30, idar="ifdar", buffer=0, 
-		nsim=99, traits=SFtraits, correct.trait.na=TRUE)
+		 traits=SFtraits, correct.trait.na=TRUE)
 
     #IPSVAR
    ipsvar.sp_44.ipp.env<- envelope4idar(mippp=SF, mippp.sp.sim= sp_44.ipp.sim.m,
                  mimark="sp_44", namesmark="species", r=1:30, idar="ipsvar", buffer=0, 
-		 nsim=99, tree=SFphylotree)
+		  tree=SFphylotree)
 
 ####################################
 # Computing CROSS_IDAR

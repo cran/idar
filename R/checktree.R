@@ -6,7 +6,8 @@
 checktree<- function(tree,  mippp, idar, correct.phylo){
    
         treeold <- tree
-        if (class(tree) == "phylo")  tree <- vcv.phylo(tree, corr = TRUE)
+        #if (class(tree) == "phylo")  tree <- vcv.phylo(tree, corr = TRUE) #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CHANGED 04/12/2019!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	if (inherits(tree, what= "phylo")) tree <- vcv.phylo(tree, corr = TRUE)
         sp.nok <- which(is.na(match(levels(mippp$marks), dimnames(tree)[[1]])))
         len.sp.nok <- length(sp.nok)
         names.sp.nok <- levels(mippp$marks)[sp.nok]
@@ -38,8 +39,8 @@ checktree<- function(tree,  mippp, idar, correct.phylo){
             }
         }
         if (idar == "imntdar") { # OJO: poner al principio de la funcion, para que corrija las especies faltantes (pasar cophenetic a "matrix" y al final de todas las correcciones devolver otr vez como "as.dist"
-            if (class(treeold) != "phylo") 
-                stop("Computing IMNTDAR requires a phylogenetic tree of class 'phylo'\n\n")
+            #if (class(treeold) != "phylo")  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CHANGED 04/12/2019!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	    if (!inherits(treeold, what= "phylo") )   stop("Computing IMNTDAR requires a phylogenetic tree of class 'phylo'\n\n")
             tree <- cophenetic(treeold)
         }
     return(tree)
@@ -53,7 +54,8 @@ checktree<- function(tree,  mippp, idar, correct.phylo){
 checktraits<- function(traits, mippp, idar, correct.trait.na, correct.trait){
 
         # If traits come as a vector , do this:
-        if (is.null(dim(traits)) & class(traits) != "dist") {
+        #if (is.null(dim(traits)) & class(traits) != "dist") {   #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CHANGED 04/12/2019!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	if (is.null(dim(traits)) & !inherits(traits, what= "dist")) {
             # first, check that the vector of traits has names simuilar to species names in ppp$marks 
             if (sum(!is.na(match(levels(mippp$marks), names(traits)[[1]]))) < 1)   stop(
             "the vector of traits should be named and should wear the same labels as the names\n of species in ppp$marks")
@@ -144,7 +146,8 @@ checktraits<- function(traits, mippp, idar, correct.trait.na, correct.trait){
             if(idar=="ifdar") traits <- as.matrix(gowdis(traits)) 
         }
         # if traits comes as a distance semimatrix (dist) transform it to a matrix
-        if (class(traits) == "dist")  traits <- as.matrix(traits)
+         # if (class(traits) == "dist")  traits <- as.matrix(traits) #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CHANGED 04/12/2019!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	 if (inherits(traits, what= "dist"))  traits <- as.matrix(traits)
         
        #if traits come as a matrix of traits instead of a data.frame and we are computing ifdar, do this:
         if (is.matrix(traits) & idar=="ifdar"){ 

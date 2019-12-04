@@ -380,8 +380,10 @@ function (comm, phy = NULL)
         tij <- 1 - diag(x = rep(1, length(comm[1, ])))
     }
     else {
-        if (class(phy) != "phylo") {
-            if (!is.matrix(phy) & class(phy) != "dist") 
+        #if (class(phy) != "phylo") {  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CAMBIADO 04/12/2019 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	if (!inherits (phy, what= "phylo")) {
+            #if (!is.matrix(phy) & class(phy) != "dist")  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CAMBIADO 04/12/2019 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	     if (!is.matrix(phy) & !inherits (phy, what=  "dist") )
                 stop("Phy must be a distance matrix")
             if (is.matrix(phy)) 
                 phy <- as.dist(phy)
@@ -390,7 +392,8 @@ function (comm, phy = NULL)
             phy <- dat$dist
             tij <- as.matrix(phy/2)
         }
-        if (class(phy) == "phylo") {
+         #if (class(phy) == "phylo") {  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CAMBIADO 04/12/2019 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	if (inherits (phy, what= "phylo")) {
             if (!is.ultrametric(phy)) 
                 stop("Phylogeny must be ultrametric")
             dat <- match.phylo.comm(phy, comm)

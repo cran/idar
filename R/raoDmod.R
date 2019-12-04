@@ -12,9 +12,11 @@ function (comm, phy = NULL)
     }
     else {
      
-        if(class(phy)!="phylo"){
+        #if(class(phy)!="phylo"){ # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CAMBIADO 04/12/2019 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+       if(!inherits(phy, what="phylo")){
           # modificactions in the case a matrix enters instead of a tree
-          if(!is.matrix(phy) & class(phy)!="dist") stop("Phy must be a distance matrix") ##
+           # if(!is.matrix(phy) & class(phy)!="dist") stop("Phy must be a distance matrix") ## !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CAMBIADO 04/12/2019 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	   if(!is.matrix(phy) &  !inherits(phy, what="dist")) stop("Phy must be a distance matrix") 
 
           if (is.matrix(phy)) phy <- as.dist(phy) #++
           dat <- match.comm.dist(comm, phy)#++
@@ -22,7 +24,8 @@ function (comm, phy = NULL)
           phy <- dat$dist #++
           tij <-as.matrix( phy/2) #++
          }
-        if(class(phy)=="phylo"){
+        #if(class(phy)=="phylo"){ ## !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CAMBIADO 04/12/2019 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	if(inherits(phy, what="phylo")){
           if(!is.ultrametric(phy)) stop("Phylogeny must be ultrametric") 
           dat <- match.phylo.comm(phy, comm)
           comm <- dat$comm

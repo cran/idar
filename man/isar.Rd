@@ -150,8 +150,8 @@ data(SFtraits)
 # IFDAR
    # this will cause an error becuse some species have NA's in the vector of trait values
 \dontrun{
-   ifdar.sp_44 <- ifdar(mippp = SF, mimark="sp_44", namesmark="species", traits=SFtraits,
-                              r=1:40, correct.trait="exclude")
+  # ifdar.sp_44 <- ifdar(mippp = SF, mimark="sp_44", namesmark="species", traits=SFtraits,
+  #                           r=1:40, correct.trait="exclude")
 }
    # "correct" NA's in trait values  by assigning tospecies without traits the average of the trait 
    # for  all the other species

@@ -59,7 +59,8 @@ ipsvar<- function(mippp, mippp.sp=NULL, mimark=NULL,  namesmark=NULL, tree=NULL,
     # this is for checktree
     idar <-"ipsvar"
     if(is.null(tree)) stop("you should provide a phylogenetic tree to compute ipscar")
-    if(class(tree)=="phylo") tree<- vcv.phylo(tree, corr = TRUE)
+   #if(class(tree)=="phylo") tree<- vcv.phylo(tree, corr = TRUE)  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  CAMBIADO 04/12/2019 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    if(inherits(tree, what="phylo")) tree<- vcv.phylo(tree, corr = TRUE)
     if(!is.matrix(tree)) stop("you should provide a phylogenetic tree or a phylogenetic covariance matrix to compute ipscar")
     tree <- checktree(tree=tree,  mippp=mippp, idar=idar, correct.phylo=correct.phylo)
   
