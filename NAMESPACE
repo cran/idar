@@ -5,10 +5,16 @@ useDynLib(idar, .registration = TRUE)
 export("controldis","envelope4idar","ifdar","ipscar","ipsear","ipsim","ipsimlist","ipsrar","ipsvar","isar","LF.gof","localdar","midar","mitable","pisar","proportion.idar","plot.pidar","risar","simulador2", "checktraits", "checktree","multifocalsimulator")
 
 # imports
-import(spatstat, FD, picante)
+importFrom('spatstat.core',  'density.ppp',  'fv',  'rpoispp')
+importFrom('spatstat.geom',  'area.owin',  'as.im',  'bdist.points',  'erosion',  'gridcentres',  'inside.owin',  'is.marked',  'is.ppp',  'marks',  'marks<-',  'owin',  'ppp',  'progressreport',  'unmark')
 importFrom("ape", "is.ultrametric")
 importFrom("ape", "vcv.phylo")
+
 # ToDo: "importFrom" only required functions 
+import(FD, picante)
+
+#remove when the dust settles:
+import(spatstat)
 
 ## Registration of S3 methods
 import(stats)
