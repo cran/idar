@@ -1,5 +1,5 @@
-324ac3a6e58f64be0e3d4f7d3e65c912 *DESCRIPTION
-ae0b9489459a46952f90c5d0f08c829d *NAMESPACE
+987fec9241393edd7bf5bb0726be5144 *DESCRIPTION
+69de1e01216608d783cec52434b2bdf5 *NAMESPACE
 8ef6786816960e7310d0d5d99dc94309 *R/LF.gof.R
 68de52ae108d4ddfd6434fcc157bc401 *R/checktree.R
 eb93c43f4163eb6aa6f0240001209934 *R/envelope4idar.R
@@ -28,7 +28,7 @@ bb0dabfc47724e4993f9c31ed70688dc *man/SF.Rd
 6956038b3a889e3c069cd938a1c4ed11 *man/checktree.Rd
 5f8554df58c7f6aed5e2f9b1bd1e427c *man/envelope4idar.Rd
 e12d1aba7a6a50790fd6182ad26722fd *man/fdis.Rd
-72e34c9b0f4cb165243e6fa8e0cea3c3 *man/ipsim.Rd
+f3de08198b117e8fb6cf4aa021bf074b *man/ipsim.Rd
 8951c6e89ae8aaf5a9513e55fe5e342b *man/isar.Rd
 82f68aff10dd3c3871f6ba4a58182556 *man/localdar.Rd
 7aafaa6cb802ffe1e0a9ec9be3d0dd9e *man/midar.Rd
