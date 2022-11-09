@@ -128,7 +128,7 @@ function (mippp, mippp.sp=NULL, nx=NULL, ny=NULL, mimark=NULL, idar = "isar", bu
     
          #*********************************************************************************
     
-    
+    # la O es como en O-ring: anillos para el calculo de rao y cwm
     
     if (idar %in% c("iraodar.O", "icwmar.O")) {
         cosamt.O <- cosamt
