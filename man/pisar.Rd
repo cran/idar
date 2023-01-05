@@ -59,7 +59,7 @@ The function \code{controldis} controls that the order of species in the phyloge
 
 }
 \value{
-  \code{pisar} and \code{risar} return an object of class \code{fv}, see  \link[spatstat.core]{fv.object}, which can be plotted directly using  \link[spatstat.core]{plot.fv}. 
+  \code{pisar} and \code{risar} return an object of class \code{fv}, see  \link[spatstat.explore]{fv.object}, which can be plotted directly using  \link[spatstat.explore]{plot.fv}. 
 
 Essentially a data frame containing a column named \emph{r} with the vector of values of the argument r at which the PISAR(r) or rISAR(r) function had been estimated and  another column, named \emph{"risar"} or \emph{"pidar"},which  contains an estimate of the selected function.
 
@@ -68,7 +68,7 @@ Essentially a data frame containing a column named \emph{r} with the vector of v
 }
 
 \section{Simulation envelopes}{
-To compute simulation envelopes for  \code{pisar} or \code{risar} functions,  use \code{\link[spatstat.core]{envelope}}. See the examples in this help page and in \code{\link[idar]{multifocalsimulator}} to know how to compute simulation envelopes from appropriate null models.
+To compute simulation envelopes for  \code{pisar} or \code{risar} functions,  use \code{\link[spatstat.explore]{envelope}}. See the examples in this help page and in \code{\link[idar]{multifocalsimulator}} to know how to compute simulation envelopes from appropriate null models.
 }
 
 

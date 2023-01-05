@@ -49,7 +49,7 @@ In 2007, Wiegand et al. developed the concept of Individual Species-Area Relatio
 
 Although recent litterature (e.g., Wiegand and Moloney 2014) suggest that buffer correction is not necessary for this type of statistics, and by default all functions are estimated without buffer (e.g., \code{buffer=0}), several  edge correction coould be employed. For example,  an adaptative buffer correction could be used (\code{buffer="adapt"}), i.e., for each radius \eqn{r}, only individuals of the focal species that are placed at a distance \eqn{>=r} from the border of the plot are considered in the computation of the different meassures. It is also possible to set a fixed buffer width  (e.g., \code{buffer=30}), which will accelerate te computations but will discard many useful trees. It is also possible to provide also a fixed window (in the argument \code{bfw}) to indicate the limits of the buffer area. This could be useful to computing the IDAR(r) functions in different subsets of the original plot (e.g., in different "habitats").
 
-In general, computing envelopes with \code{envelope4idar} is a little faster than using \link[spatstat.core]{envelope} and the individual functions (e.g., \link{ipsvar}, \link{ifdar}, etc). In addition, \code{envelope4idar} has the possibility of computing "crossed" individual functions, i.e., using a focal species that is not part of the community whose diversities are being measured. This allows evaluating the diversity of e.g., young trees around older trees, etc. This is accomplished by seting the argument \code{cross.idar=TRUE}.
+In general, computing envelopes with \code{envelope4idar} is a little faster than using \link[spatstat.explore]{envelope} and the individual functions (e.g., \link{ipsvar}, \link{ifdar}, etc). In addition, \code{envelope4idar} has the possibility of computing "crossed" individual functions, i.e., using a focal species that is not part of the community whose diversities are being measured. This allows evaluating the diversity of e.g., young trees around older trees, etc. This is accomplished by seting the argument \code{cross.idar=TRUE}.
 
 While  \code{envelope4idar} manages data and results, \code{idar2} actually computes the individual functions (both observed and simulated) . In general, \code{idar2} would not be called directly by the user.
 
@@ -63,7 +63,7 @@ While  \code{envelope4idar} manages data and results, \code{idar2} actually comp
 
 
 \value{
-  An object of class "\code{fv}", see  \link[spatstat.core]{fv.object}, and \link[spatstat.core]{envelope},which can be plotted directly using  \link[spatstat.core]{plot.fv}. 
+  An object of class "\code{fv}", see  \link[spatstat.explore]{fv.object}, and \link[spatstat.explore]{envelope},which can be plotted directly using  \link[spatstat.explore]{plot.fv}. 
 Essentially a data frame containing columns 
    \describe{
       \item{r}{the vector of values of the argument r at which the \code{idar(r)} function has been estimated}
