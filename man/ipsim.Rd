@@ -90,10 +90,10 @@ ipsim(pp=lansing, mimark="maple", lambda=maple.lambda)
   # (which remains "fixed")
    multi.maple.sim<- ipsimlist(pp=lansing, mimark="maple", listsim=maple.sim)
 
-
+\dontrun{
 ## Use of multifocalsimulator() ##
 
-# The same but in a single step with multifocalsimulator(): Build a list of 19 multivariate
+# The same but in a single step with multifocalsimulator(): Build a list of 99 multivariate
 # point pattern where maple is simulated according to an Inhomogeneous Poisson process
 # from a predefined  intensity surface "lambda" and where all the other species are keep 
 # fixed in their original coordinates. "Lambda" is an im object resulting from density.ppp(),
@@ -107,7 +107,7 @@ ipsim(pp=lansing, mimark="maple", lambda=maple.lambda)
    multi.maple.sim <- multifocalsimulator(lansing, "maple", nsim=99,
                                          simulate=expression(rpoispp(maple.lambda)))
 
-\dontrun{
+
    # Use the simulated multivariate patterns to compute  envelopes for the ISAR against
    # a null model of IPP for maple 
    isar.maple.env<- envelope(lansing, fun=isar, mimark="maple", nsim=99, savefuns=TRUE,

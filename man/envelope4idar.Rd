@@ -28,11 +28,11 @@ idar2(mippp.sp, mippp, mimark, idar="isar", buffer,bfw, r,
   \item{mimark}{Character. Name of the focal species in the multitype \code{mippp}.}
   \item{namesmark}{Character. If the marks in \code{mippp} are within a \code{data.frame}, the name of the column with the species names}
   \item{r}{Vector of distances to compute IDAR(r) functions}  
-  \item{idar}{Character. The name of the idar fucntion to be computed. Either "isar", "ipsvar", "ipsrar", "ipsear", "ipscar", "icwmar", "icwmar.O",  "iraodar"or "imntdar"}
+  \item{idar}{Character. The name of the idar function to be computed. Either "isar", "ipsvar", "ipsrar", "ipsear", "ipscar", "icwmar", "icwmar.O",  "iraodar"or "imntdar"}
   \item{buffer}{Character or numeric. Either "adapt" (i.e., compute an adaptive buffer), or a number indicating de width of a fixed buffer area around the plot border}
   \item{bfw}{An \link[spatstat.geom]{owin} object indicating the limits of the buffer area.}
   \item{nsim}{The number of simulations.}
-  \item{nrank}{Integer. Rank of the envelope value amongst the nsim simulated values. A rank of 1 means that the minimum and maximum simulated values will be used.}
+  \item{nrank}{Integer. Rank of the envelope value amongst the \code{nsim} simulated values. A rank of 1 means that the minimum and maximum simulated values will be used.}
   \item{tree}{A phylogenetic tree in \code{phylo} format (\pkg{ape}) or a phylogenetic covariance matrix}
   \item{traits}{A \link[base]{data.frame} of traits, or a distance matrix among species (in \code{\link[stats]{dist}} or \code{\link[base]{matrix}} format) computed on a data.frame of traits.}
   \item{cross.idar}{Logical. If \code{TRUE}, the focal pattern be excluded form the community being measured. }

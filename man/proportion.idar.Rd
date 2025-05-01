@@ -67,7 +67,7 @@ lansing.sp<- split(lansing)
 
 # Set parameters for the simulations, estimation of intensity surface for IPP, etc.
 # BEWARE: THIS is for R-TESTING ALONE. REAL TESTS SHOULD EMPLOY 199 simulations or higher
-nsim<-8
+nsim<-5
 r<- seq(0.01,0.25, by=0.01)
 # Create list to store the results
 isar.lansing<- list()

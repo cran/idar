@@ -1,10 +1,11 @@
 citHeader("To cite idar in publications use:")
 
-citEntry(entry = "Article",
+bibentry(bibtype = "Article",
   title        = "Individual species affect plant traits structure in their surroundings: evidences of functional mechanisms of assembly",
-  author       = personList(as.person("Julia Chacon-Labella"),
-                   as.person("Marcelino de la Cruz"),
-                   as.person("Adrian Escudero")),
+  author       = c(
+                   person("Julia", "Chacon-Labella", role="aut"),
+                   person("Marcelino", "de la Cruz", role="aut"),
+                   person("Adrian", "Escudero", role="aut")),
   journal      = "Oecologia",
   year         = "2016",
   volume       = "180",
@@ -13,18 +14,19 @@ citEntry(entry = "Article",
   url          = "http://dx.doi.org/10.1007/s00442-016-3547-z",
 
   textVersion  =
-  paste("Julia Cacon-Labella, Marcelino de la Cruz, Adrian Escudero (2016).",
+  paste("Julia Chacon-Labella, Marcelino de la Cruz, Adrian Escudero (2016).",
         "Individual species affect plant traits structure in their surroundings: evidences of functional mechanisms of assembly",
         "Oecologia, 180(4), 975-987.",
         "URL http://dx.doi.org/10.1007/s00442-016-3547-z."))
 
-citEntry(entry = "Article",
+bibentry(bibtype = "Article",
   title        = "The effects of individual tree species on species diversity in a tropical dry forest change throughout ontogeny",
-  author       = personList(as.person("Carlos Ivan Espinosa"),
-                    as.person("Marcelino de la Cruz"),
-		    as.person("Andrea Jara-Guerrero"),
-		    as.person("Elizabeth Gusman"),
-                   as.person("Adrian Escudero")),
+  author       = c(
+                    person("Carlos Ivan", "Espinosa", role="aut"),
+                    person("Marcelino", "de la Cruz", role="aut"),
+                    person("Andrea", "Jara-Guerrero", role="aut"),
+                    person("Elizabeth", "Gusman", role="aut"),
+                    person("Adrian", "Escudero", role="aut")),
   journal      = "Ecography",
   year         = "2016",
   volume       = "39",
