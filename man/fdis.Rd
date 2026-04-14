@@ -31,7 +31,7 @@ This function is a wrap to \code{\link[FD]{fdisp}} in package \pkg{FD}. It manag
 
 \references{
 
-   \enc{Laliberté, E. and  Legendre, P. (2010) A distance-based framework for measuring functional diversity from multiple traits. \emph{Ecology} 91, 299-305.}{Laliberte, E. and  Legendre, P. (2010) A distance-based framework for measuring functional diversity from multiple traits. \emph{Ecology} 91, 299-305.} 
+   \enc{LalibertÃ©, E. and  Legendre, P. (2010) A distance-based framework for measuring functional diversity from multiple traits. \emph{Ecology} 91, 299-305.}{Laliberte, E. and  Legendre, P. (2010) A distance-based framework for measuring functional diversity from multiple traits. \emph{Ecology} 91, 299-305.} 
 
 }
 

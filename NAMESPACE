@@ -2,7 +2,7 @@
 useDynLib(idar, .registration = TRUE)
 
 # Export regular functions
-export("controldis","envelope4idar","ifdar","ipscar","ipsear","ipsim","ipsimlist","ipsrar","ipsvar","isar","LF.gof","localdar","midar","mitable","pisar","proportion.idar","plot.pidar","risar","simulador2", "checktraits", "checktree","multifocalsimulator")
+export("controldis","envelope4idar","ifdar","ipscar","ipsear","ipsim","ipsimlist","ipsrar","ipsvar","isar","LF.gof","localdar","midar","mitable","pisar","proportion.idar","plot.pidar","risar","simulador2", "checktraits", "checktree","multifocalsimulator", gowdis, fdisp)
 
 # imports
 importFrom('spatstat.explore',  'density.ppp',  'fv')
@@ -11,8 +11,13 @@ importFrom('spatstat.geom',  'area.owin',  'as.im',  'bdist.points',  'erosion',
 importFrom("ape", "is.ultrametric")
 importFrom("ape", "vcv.phylo")
 
+# import required by FD functions
+importFrom("ade4", "bicenter.wt")
+
 # ToDo: "importFrom" only required functions 
-import(FD, picante)
+import(picante)
+
+# eliminated  import(FD) because of FD getting archived
 
 #remove when the dust settles:
 import(spatstat)

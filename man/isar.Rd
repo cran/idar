@@ -152,7 +152,7 @@ data(SFtraits)
 \dontrun{
   # ifdar.sp_44 <- ifdar(mippp = SF, mimark="sp_44", namesmark="species", traits=SFtraits,
   #                           r=1:40, correct.trait="exclude")
-}
+
    # "correct" NA's in trait values  by assigning tospecies without traits the average of the trait 
    # for  all the other species
    ifdar.sp_44 <- ifdar(mippp = SF, mimark="sp_44", namesmark="species",  traits=SFtraits,
@@ -164,7 +164,7 @@ data(SFtraits)
                                r=1:40, correct.trait.na=TRUE,correct.trait="exclude")
 
      plot(ifdar.sp_44)
-
+}
 # For examples of envelopes for these functions  see the help page of ipsim() or envelope4idar()
 
 }
